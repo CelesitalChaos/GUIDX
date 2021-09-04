@@ -53,6 +53,9 @@ namespace GUIDX.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.TB_ValidatorInput = new System.Windows.Forms.TextBox();
             this.L_Output = new System.Windows.Forms.Label();
+            this.MS_Menu = new System.Windows.Forms.MenuStrip();
+            this.TSMI_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMI_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Amount)).BeginInit();
             this.TLP_Main.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,6 +65,7 @@ namespace GUIDX.Forms
             this.TP_Generator.SuspendLayout();
             this.TP_Validator.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.MS_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_Generate
@@ -82,7 +86,7 @@ namespace GUIDX.Forms
             this.TB_Output.Name = "TB_Output";
             this.TB_Output.ReadOnly = true;
             this.TB_Output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TB_Output.Size = new System.Drawing.Size(358, 191);
+            this.TB_Output.Size = new System.Drawing.Size(358, 176);
             this.TB_Output.TabIndex = 1;
             // 
             // CB_Format
@@ -143,7 +147,7 @@ namespace GUIDX.Forms
             this.TLP_Main.RowCount = 2;
             this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TLP_Main.Size = new System.Drawing.Size(370, 337);
+            this.TLP_Main.Size = new System.Drawing.Size(370, 322);
             this.TLP_Main.TabIndex = 7;
             // 
             // groupBox1
@@ -152,7 +156,7 @@ namespace GUIDX.Forms
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 124);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 210);
+            this.groupBox1.Size = new System.Drawing.Size(364, 195);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
@@ -239,7 +243,7 @@ namespace GUIDX.Forms
             // 
             this.SS_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSSL_Version});
-            this.SS_Main.Location = new System.Drawing.Point(0, 369);
+            this.SS_Main.Location = new System.Drawing.Point(0, 378);
             this.SS_Main.Name = "SS_Main";
             this.SS_Main.Size = new System.Drawing.Size(384, 22);
             this.SS_Main.SizingGrip = false;
@@ -258,10 +262,10 @@ namespace GUIDX.Forms
             this.TC_Main.Controls.Add(this.TP_Generator);
             this.TC_Main.Controls.Add(this.TP_Validator);
             this.TC_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TC_Main.Location = new System.Drawing.Point(0, 0);
+            this.TC_Main.Location = new System.Drawing.Point(0, 24);
             this.TC_Main.Name = "TC_Main";
             this.TC_Main.SelectedIndex = 0;
-            this.TC_Main.Size = new System.Drawing.Size(384, 369);
+            this.TC_Main.Size = new System.Drawing.Size(384, 354);
             this.TC_Main.TabIndex = 11;
             // 
             // TP_Generator
@@ -270,7 +274,7 @@ namespace GUIDX.Forms
             this.TP_Generator.Location = new System.Drawing.Point(4, 22);
             this.TP_Generator.Name = "TP_Generator";
             this.TP_Generator.Padding = new System.Windows.Forms.Padding(3);
-            this.TP_Generator.Size = new System.Drawing.Size(376, 343);
+            this.TP_Generator.Size = new System.Drawing.Size(376, 328);
             this.TP_Generator.TabIndex = 0;
             this.TP_Generator.Text = "Generator";
             this.TP_Generator.UseVisualStyleBackColor = true;
@@ -328,15 +332,42 @@ namespace GUIDX.Forms
             this.L_Output.TabIndex = 2;
             this.L_Output.Text = "Output: Invalid";
             // 
+            // MS_Menu
+            // 
+            this.MS_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_File});
+            this.MS_Menu.Location = new System.Drawing.Point(0, 0);
+            this.MS_Menu.Name = "MS_Menu";
+            this.MS_Menu.Size = new System.Drawing.Size(384, 24);
+            this.MS_Menu.TabIndex = 12;
+            this.MS_Menu.Text = "menuStrip1";
+            // 
+            // TSMI_File
+            // 
+            this.TSMI_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_Exit});
+            this.TSMI_File.Name = "TSMI_File";
+            this.TSMI_File.Size = new System.Drawing.Size(37, 20);
+            this.TSMI_File.Text = "File";
+            // 
+            // TSMI_Exit
+            // 
+            this.TSMI_Exit.Name = "TSMI_Exit";
+            this.TSMI_Exit.Size = new System.Drawing.Size(180, 22);
+            this.TSMI_Exit.Text = "Exit";
+            this.TSMI_Exit.Click += new System.EventHandler(this.TSMI_Exit_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 391);
+            this.ClientSize = new System.Drawing.Size(384, 400);
             this.Controls.Add(this.TC_Main);
             this.Controls.Add(this.SS_Main);
+            this.Controls.Add(this.MS_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.MS_Menu;
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "GUID X";
@@ -355,6 +386,8 @@ namespace GUIDX.Forms
             this.TP_Validator.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.MS_Menu.ResumeLayout(false);
+            this.MS_Menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,6 +418,9 @@ namespace GUIDX.Forms
         private System.Windows.Forms.TextBox TB_Prefix;
         private System.Windows.Forms.CheckBox CB_Suffix;
         private System.Windows.Forms.CheckBox CB_Prefix;
+        private System.Windows.Forms.MenuStrip MS_Menu;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_File;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_Exit;
     }
 }
 

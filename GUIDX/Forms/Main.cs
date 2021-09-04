@@ -117,5 +117,15 @@ namespace GUIDX.Forms
         {
             BTN_Generate.PerformClick();
         }
+
+        /// <summary>
+        ///     Handles the Click event of the TSMI_Exit control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
+        private void TSMI_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
