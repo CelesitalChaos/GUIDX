@@ -66,7 +66,7 @@ namespace GUIDX.Forms
             // 
             // BTN_Generate
             // 
-            this.BTN_Generate.Location = new System.Drawing.Point(3, 3);
+            this.BTN_Generate.Location = new System.Drawing.Point(12, 10);
             this.BTN_Generate.Name = "BTN_Generate";
             this.BTN_Generate.Size = new System.Drawing.Size(75, 23);
             this.BTN_Generate.TabIndex = 0;
@@ -99,7 +99,7 @@ namespace GUIDX.Forms
             // 
             // BTN_Copy
             // 
-            this.BTN_Copy.Location = new System.Drawing.Point(3, 32);
+            this.BTN_Copy.Location = new System.Drawing.Point(12, 39);
             this.BTN_Copy.Name = "BTN_Copy";
             this.BTN_Copy.Size = new System.Drawing.Size(75, 23);
             this.BTN_Copy.TabIndex = 3;
