@@ -34,14 +34,16 @@ namespace GUIDX.Forms
             this.TSSL_Version = new System.Windows.Forms.ToolStripStatusLabel();
             this.TC_Main = new System.Windows.Forms.TabControl();
             this.TP_Generator = new System.Windows.Forms.TabPage();
+            this.GeneratorControl = new GUIDX.UserControls.GeneratorControl();
             this.TP_Validator = new System.Windows.Forms.TabPage();
             this.MS_Menu = new System.Windows.Forms.MenuStrip();
             this.TSMI_File = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.GeneratorControl = new GUIDX.UserControls.GeneratorControl();
+            this.ValidatorControl = new GUIDX.UserControls.ValidatorControl();
             this.SS_Main.SuspendLayout();
             this.TC_Main.SuspendLayout();
             this.TP_Generator.SuspendLayout();
+            this.TP_Validator.SuspendLayout();
             this.MS_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,8 +87,17 @@ namespace GUIDX.Forms
             this.TP_Generator.Text = "Generator";
             this.TP_Generator.UseVisualStyleBackColor = true;
             // 
+            // GeneratorControl
+            // 
+            this.GeneratorControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GeneratorControl.Location = new System.Drawing.Point(3, 3);
+            this.GeneratorControl.Name = "GeneratorControl";
+            this.GeneratorControl.Size = new System.Drawing.Size(370, 322);
+            this.GeneratorControl.TabIndex = 0;
+            // 
             // TP_Validator
             // 
+            this.TP_Validator.Controls.Add(this.ValidatorControl);
             this.TP_Validator.Location = new System.Drawing.Point(4, 22);
             this.TP_Validator.Name = "TP_Validator";
             this.TP_Validator.Padding = new System.Windows.Forms.Padding(3);
@@ -120,13 +131,13 @@ namespace GUIDX.Forms
             this.TSMI_Exit.Text = "Exit";
             this.TSMI_Exit.Click += new System.EventHandler(this.TSMI_Exit_Click);
             // 
-            // GeneratorControl
+            // ValidatorControl
             // 
-            this.GeneratorControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GeneratorControl.Location = new System.Drawing.Point(3, 3);
-            this.GeneratorControl.Name = "GeneratorControl";
-            this.GeneratorControl.Size = new System.Drawing.Size(370, 322);
-            this.GeneratorControl.TabIndex = 0;
+            this.ValidatorControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ValidatorControl.Location = new System.Drawing.Point(3, 3);
+            this.ValidatorControl.Name = "ValidatorControl";
+            this.ValidatorControl.Size = new System.Drawing.Size(370, 322);
+            this.ValidatorControl.TabIndex = 0;
             // 
             // Main
             // 
@@ -147,6 +158,7 @@ namespace GUIDX.Forms
             this.SS_Main.PerformLayout();
             this.TC_Main.ResumeLayout(false);
             this.TP_Generator.ResumeLayout(false);
+            this.TP_Validator.ResumeLayout(false);
             this.MS_Menu.ResumeLayout(false);
             this.MS_Menu.PerformLayout();
             this.ResumeLayout(false);
@@ -164,6 +176,7 @@ namespace GUIDX.Forms
         private System.Windows.Forms.ToolStripMenuItem TSMI_File;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Exit;
         private UserControls.GeneratorControl GeneratorControl;
+        private UserControls.ValidatorControl ValidatorControl;
     }
 }
 
