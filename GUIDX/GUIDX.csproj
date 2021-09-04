@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\GUIDFormat.cs" />
-    <Compile Include="Enums\GUIDType.cs" />
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>

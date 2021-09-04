@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 
-namespace GUIDX
+namespace GUIDX.Enums
 {
+    /// <summary>
+    /// The <see cref="GUIDFormat"/> enum.
+    /// </summary>
     public enum GUIDFormat
     {
-        None,
+        [Description(Constants.GUID_EMPTY)]
+        Alphanumeric = 0,
         
-        Brackets,
+        [Description(Constants.GUID_Letters)]
+        Letters = 1,
 
-        Parentheses,
-
-        Format1,
-
-        Format2
+        [Description(Constants.GUID_Numeric)]
+        Numeric = 2
     }
 }

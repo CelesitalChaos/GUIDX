@@ -2,6 +2,8 @@
 
 using System;
 
+using GUIDX.Enums;
+
 #endregion
 
 namespace GUIDX.Utilities
@@ -20,16 +22,16 @@ namespace GUIDX.Utilities
         {
             string generatedText = string.Empty;
 
-            switch (options.Mode)
+            switch (options.Format)
             {
-                case GUIDType.Alphanumeric:
+                case GUIDFormat.Alphanumeric:
                 {
                     Guid generatedGuid = Guid.NewGuid();
                     generatedText = generatedGuid.ToString();
                     break;
                 }
 
-                case GUIDType.Letters:
+                case GUIDFormat.Letters:
                 {
                     // 8 - 4 - 4 - 12
                     generatedText = Randomizer.RandomString(8) + "-" + Randomizer.RandomString(4) + "-" + Randomizer.RandomString(4) + "-" +
@@ -37,7 +39,7 @@ namespace GUIDX.Utilities
                         break;
                 }
 
-                case GUIDType.Numeric:
+                case GUIDFormat.Numeric:
                 {
                     // 8 - 4 - 4 - 12
                     generatedText = Randomizer.RandomNumberSize(8) + "-" + Randomizer.RandomNumberSize(4) + "-" + Randomizer.RandomNumberSize(4) + "-" +
@@ -46,38 +48,35 @@ namespace GUIDX.Utilities
                 }
             }
 
-            switch (options.Format)
+            generatedText = GeneratePrefixSuffix(generatedText, options);
+            
+            return generatedText;
+        }
+
+        /// <summary>
+        /// Generates the prefix suffix.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>The <see cref="string"/> value.</returns>
+        private static string GeneratePrefixSuffix(string value, GUIDGenerationOptions options)
+        {
+            string generatePrefixSuffix = value;
+
+            if (options.Prefix && options.Suffix)
             {
-                case GUIDFormat.None:
-                {
-                    generatedText = generatedText.ToString();
-                    break;
-                }
-                case GUIDFormat.Brackets:
-                {
-                    generatedText = "{" + generatedText.ToString() + "}";
-                    break;
-                }
-                case GUIDFormat.Parentheses:
-                {
-                    generatedText = "(" + generatedText.ToString() + ")";
-                    break;
-                }
-                case GUIDFormat.Format1:
-                    // [Guid("DD801EC1-1ACC-4473-BB5E-CEF6DDC08BE9")]
-                    generatedText = "[Guid(" + @"""" + generatedText.ToString() + @"""" + ")]";
-                    break;
-                case GUIDFormat.Format2:
-                    // <Guid("DD801EC1-1ACC-4473-BB5E-CEF6DDC08BE9")>
-                    generatedText = "<Guid(" + @"""" + generatedText.ToString() + @"""" + ")>";
-                    break;
-                default:
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
+                generatePrefixSuffix = options.PrefixText + value + options.SuffixText;
+            }
+            else if (options.Prefix)
+            {
+                generatePrefixSuffix = options.PrefixText + value;
+            }
+            else if (options.Suffix)
+            {
+                generatePrefixSuffix = value + options.SuffixText;
             }
 
-            return generatedText;
+            return generatePrefixSuffix;
         }
 
         /// <summary>
@@ -90,81 +89,21 @@ namespace GUIDX.Utilities
         {
             string generatedText = string.Empty;
 
-            switch (options.Mode)
+            for (int i = 0; i < amount; i++)
             {
-                case GUIDType.Alphanumeric:
+                string newGuid = GenerateGuidType(options);
+
+                if (amount == 1)
                 {
-                    
-                        for (int i = 0; i < amount; i++)
-                        {
-                            string newGuid = GenerateGuidType(options);
-
-                            if (amount == 1)
-                            {
-                                generatedText = GenerateGuidType(options);
-                                }
-                            else if (i < amount - 1)
-                            {
-                                generatedText += newGuid + Environment.NewLine;
-                            }
-                            else
-                            {
-                                generatedText += newGuid;
-                            }
-                        }
-                    
-
-                    break;
+                    generatedText = GenerateGuidType(options);
                 }
-
-                case GUIDType.Letters:
+                else if (i < amount - 1)
                 {
-                    if (amount == 1)
-                    {
-                        generatedText = GenerateGuidType(options);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < amount; i++)
-                        {
-                            string newGuid = GenerateGuidType(options);
-
-                            if (i < amount - 1)
-                            {
-                                generatedText += newGuid + Environment.NewLine;
-                            }
-                            else
-                            {
-                                generatedText += newGuid;
-                            }
-                        }
-                    }
-                    break;
+                    generatedText += newGuid + Environment.NewLine;
                 }
-
-                case GUIDType.Numeric:
+                else
                 {
-                    if (amount == 1)
-                    {
-                        generatedText = GenerateGuidType(options);
-                    }
-                    else
-                    {
-                        for (int i = 0; i < amount; i++)
-                        {
-                            string newGuid = GenerateGuidType(options);
-
-                            if (i < amount - 1)
-                            {
-                                generatedText += newGuid + Environment.NewLine;
-                            }
-                            else
-                            {
-                                generatedText += newGuid;
-                            }
-                        }
-                    }
-                    break;
+                    generatedText += newGuid;
                 }
             }
 

@@ -31,39 +31,41 @@ namespace GUIDX.Forms
         {
             this.BTN_Generate = new System.Windows.Forms.Button();
             this.TB_Output = new System.Windows.Forms.TextBox();
-            this.CB_Mode = new System.Windows.Forms.ComboBox();
+            this.CB_Format = new System.Windows.Forms.ComboBox();
             this.BTN_Copy = new System.Windows.Forms.Button();
             this.NUD_Amount = new System.Windows.Forms.NumericUpDown();
             this.TLP_Main = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.P_Main = new System.Windows.Forms.Panel();
+            this.TB_Suffix = new System.Windows.Forms.TextBox();
+            this.TB_Prefix = new System.Windows.Forms.TextBox();
+            this.L_Format = new System.Windows.Forms.Label();
+            this.L_Amount = new System.Windows.Forms.Label();
             this.SS_Main = new System.Windows.Forms.StatusStrip();
             this.TSSL_Version = new System.Windows.Forms.ToolStripStatusLabel();
             this.TC_Main = new System.Windows.Forms.TabControl();
             this.TP_Generator = new System.Windows.Forms.TabPage();
             this.TP_Validator = new System.Windows.Forms.TabPage();
-            this.TB_ValidatorInput = new System.Windows.Forms.TextBox();
-            this.L_Output = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.P_Main = new System.Windows.Forms.Panel();
-            this.L_Amount = new System.Windows.Forms.Label();
-            this.L_Mode = new System.Windows.Forms.Label();
-            this.L_Format = new System.Windows.Forms.Label();
-            this.CB_Format = new System.Windows.Forms.ComboBox();
+            this.TB_ValidatorInput = new System.Windows.Forms.TextBox();
+            this.L_Output = new System.Windows.Forms.Label();
+            this.CB_Prefix = new System.Windows.Forms.CheckBox();
+            this.CB_Suffix = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Amount)).BeginInit();
             this.TLP_Main.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.P_Main.SuspendLayout();
             this.SS_Main.SuspendLayout();
             this.TC_Main.SuspendLayout();
             this.TP_Generator.SuspendLayout();
             this.TP_Validator.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.P_Main.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_Generate
             // 
-            this.BTN_Generate.Location = new System.Drawing.Point(12, 13);
+            this.BTN_Generate.Location = new System.Drawing.Point(3, 3);
             this.BTN_Generate.Name = "BTN_Generate";
             this.BTN_Generate.Size = new System.Drawing.Size(75, 23);
             this.BTN_Generate.TabIndex = 0;
@@ -79,22 +81,24 @@ namespace GUIDX.Forms
             this.TB_Output.Name = "TB_Output";
             this.TB_Output.ReadOnly = true;
             this.TB_Output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TB_Output.Size = new System.Drawing.Size(358, 205);
+            this.TB_Output.Size = new System.Drawing.Size(358, 191);
             this.TB_Output.TabIndex = 1;
             // 
-            // CB_Mode
+            // CB_Format
             // 
-            this.CB_Mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Mode.FormattingEnabled = true;
-            this.CB_Mode.Location = new System.Drawing.Point(168, 42);
-            this.CB_Mode.Name = "CB_Mode";
-            this.CB_Mode.Size = new System.Drawing.Size(144, 21);
-            this.CB_Mode.TabIndex = 2;
-            this.CB_Mode.SelectedIndexChanged += new System.EventHandler(this.CB_Mode_SelectedIndexChanged);
+            this.CB_Format.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CB_Format.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Format.FormattingEnabled = true;
+            this.CB_Format.Location = new System.Drawing.Point(157, 39);
+            this.CB_Format.Name = "CB_Format";
+            this.CB_Format.Size = new System.Drawing.Size(194, 21);
+            this.CB_Format.TabIndex = 2;
+            this.CB_Format.SelectedIndexChanged += new System.EventHandler(this.CB_Mode_SelectedIndexChanged);
             // 
             // BTN_Copy
             // 
-            this.BTN_Copy.Location = new System.Drawing.Point(12, 42);
+            this.BTN_Copy.Location = new System.Drawing.Point(3, 32);
             this.BTN_Copy.Name = "BTN_Copy";
             this.BTN_Copy.Size = new System.Drawing.Size(75, 23);
             this.BTN_Copy.TabIndex = 3;
@@ -104,7 +108,7 @@ namespace GUIDX.Forms
             // 
             // NUD_Amount
             // 
-            this.NUD_Amount.Location = new System.Drawing.Point(168, 16);
+            this.NUD_Amount.Location = new System.Drawing.Point(157, 13);
             this.NUD_Amount.Maximum = new decimal(new int[] {
             500,
             0,
@@ -129,15 +133,15 @@ namespace GUIDX.Forms
             // TLP_Main
             // 
             this.TLP_Main.ColumnCount = 1;
-            this.TLP_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TLP_Main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TLP_Main.Controls.Add(this.groupBox1, 0, 1);
             this.TLP_Main.Controls.Add(this.P_Main, 0, 0);
             this.TLP_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TLP_Main.Location = new System.Drawing.Point(3, 3);
             this.TLP_Main.Name = "TLP_Main";
             this.TLP_Main.RowCount = 2;
-            this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.03593F));
-            this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.96407F));
+            this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.TLP_Main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TLP_Main.Size = new System.Drawing.Size(370, 337);
             this.TLP_Main.TabIndex = 7;
             // 
@@ -145,12 +149,68 @@ namespace GUIDX.Forms
             // 
             this.groupBox1.Controls.Add(this.TB_Output);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 110);
+            this.groupBox1.Location = new System.Drawing.Point(3, 124);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 224);
+            this.groupBox1.Size = new System.Drawing.Size(364, 210);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
+            // 
+            // P_Main
+            // 
+            this.P_Main.Controls.Add(this.CB_Suffix);
+            this.P_Main.Controls.Add(this.CB_Prefix);
+            this.P_Main.Controls.Add(this.TB_Suffix);
+            this.P_Main.Controls.Add(this.TB_Prefix);
+            this.P_Main.Controls.Add(this.L_Format);
+            this.P_Main.Controls.Add(this.L_Amount);
+            this.P_Main.Controls.Add(this.BTN_Generate);
+            this.P_Main.Controls.Add(this.BTN_Copy);
+            this.P_Main.Controls.Add(this.CB_Format);
+            this.P_Main.Controls.Add(this.NUD_Amount);
+            this.P_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.P_Main.Location = new System.Drawing.Point(3, 3);
+            this.P_Main.Name = "P_Main";
+            this.P_Main.Size = new System.Drawing.Size(364, 115);
+            this.P_Main.TabIndex = 10;
+            // 
+            // TB_Suffix
+            // 
+            this.TB_Suffix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_Suffix.Location = new System.Drawing.Point(157, 89);
+            this.TB_Suffix.Name = "TB_Suffix";
+            this.TB_Suffix.Size = new System.Drawing.Size(194, 20);
+            this.TB_Suffix.TabIndex = 17;
+            this.TB_Suffix.Text = "\")]";
+            // 
+            // TB_Prefix
+            // 
+            this.TB_Prefix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_Prefix.Location = new System.Drawing.Point(157, 66);
+            this.TB_Prefix.Name = "TB_Prefix";
+            this.TB_Prefix.Size = new System.Drawing.Size(194, 20);
+            this.TB_Prefix.TabIndex = 15;
+            this.TB_Prefix.Text = "[Guid(\"";
+            // 
+            // L_Format
+            // 
+            this.L_Format.AutoSize = true;
+            this.L_Format.Location = new System.Drawing.Point(93, 42);
+            this.L_Format.Name = "L_Format";
+            this.L_Format.Size = new System.Drawing.Size(37, 13);
+            this.L_Format.TabIndex = 12;
+            this.L_Format.Text = "Mode:";
+            // 
+            // L_Amount
+            // 
+            this.L_Amount.AutoSize = true;
+            this.L_Amount.Location = new System.Drawing.Point(93, 15);
+            this.L_Amount.Name = "L_Amount";
+            this.L_Amount.Size = new System.Drawing.Size(46, 13);
+            this.L_Amount.TabIndex = 11;
+            this.L_Amount.Text = "Amount:";
             // 
             // SS_Main
             // 
@@ -166,7 +226,7 @@ namespace GUIDX.Forms
             // TSSL_Version
             // 
             this.TSSL_Version.Name = "TSSL_Version";
-            this.TSSL_Version.Size = new System.Drawing.Size(467, 17);
+            this.TSSL_Version.Size = new System.Drawing.Size(369, 17);
             this.TSSL_Version.Spring = true;
             this.TSSL_Version.Text = "Version: #.#.#.#";
             // 
@@ -199,28 +259,10 @@ namespace GUIDX.Forms
             this.TP_Validator.Location = new System.Drawing.Point(4, 22);
             this.TP_Validator.Name = "TP_Validator";
             this.TP_Validator.Padding = new System.Windows.Forms.Padding(3);
-            this.TP_Validator.Size = new System.Drawing.Size(373, 340);
+            this.TP_Validator.Size = new System.Drawing.Size(376, 343);
             this.TP_Validator.TabIndex = 1;
             this.TP_Validator.Text = "Validator";
             this.TP_Validator.UseVisualStyleBackColor = true;
-            // 
-            // TB_ValidatorInput
-            // 
-            this.TB_ValidatorInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TB_ValidatorInput.Location = new System.Drawing.Point(3, 16);
-            this.TB_ValidatorInput.Name = "TB_ValidatorInput";
-            this.TB_ValidatorInput.Size = new System.Drawing.Size(355, 20);
-            this.TB_ValidatorInput.TabIndex = 0;
-            this.TB_ValidatorInput.TextChanged += new System.EventHandler(this.TB_ValidatorInput_TextChanged);
-            // 
-            // L_Output
-            // 
-            this.L_Output.AutoSize = true;
-            this.L_Output.Location = new System.Drawing.Point(19, 124);
-            this.L_Output.Name = "L_Output";
-            this.L_Output.Size = new System.Drawing.Size(76, 13);
-            this.L_Output.TabIndex = 2;
-            this.L_Output.Text = "Output: Invalid";
             // 
             // groupBox4
             // 
@@ -245,58 +287,45 @@ namespace GUIDX.Forms
             this.label1.TabIndex = 7;
             this.label1.Text = "Example: \r\n\r\nxxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx";
             // 
-            // P_Main
+            // TB_ValidatorInput
             // 
-            this.P_Main.Controls.Add(this.L_Format);
-            this.P_Main.Controls.Add(this.CB_Format);
-            this.P_Main.Controls.Add(this.L_Mode);
-            this.P_Main.Controls.Add(this.L_Amount);
-            this.P_Main.Controls.Add(this.BTN_Generate);
-            this.P_Main.Controls.Add(this.BTN_Copy);
-            this.P_Main.Controls.Add(this.CB_Mode);
-            this.P_Main.Controls.Add(this.NUD_Amount);
-            this.P_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.P_Main.Location = new System.Drawing.Point(3, 3);
-            this.P_Main.Name = "P_Main";
-            this.P_Main.Size = new System.Drawing.Size(364, 101);
-            this.P_Main.TabIndex = 10;
+            this.TB_ValidatorInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TB_ValidatorInput.Location = new System.Drawing.Point(3, 16);
+            this.TB_ValidatorInput.Name = "TB_ValidatorInput";
+            this.TB_ValidatorInput.Size = new System.Drawing.Size(355, 20);
+            this.TB_ValidatorInput.TabIndex = 0;
+            this.TB_ValidatorInput.TextChanged += new System.EventHandler(this.TB_ValidatorInput_TextChanged);
             // 
-            // L_Amount
+            // L_Output
             // 
-            this.L_Amount.AutoSize = true;
-            this.L_Amount.Location = new System.Drawing.Point(116, 18);
-            this.L_Amount.Name = "L_Amount";
-            this.L_Amount.Size = new System.Drawing.Size(46, 13);
-            this.L_Amount.TabIndex = 11;
-            this.L_Amount.Text = "Amount:";
+            this.L_Output.AutoSize = true;
+            this.L_Output.Location = new System.Drawing.Point(19, 124);
+            this.L_Output.Name = "L_Output";
+            this.L_Output.Size = new System.Drawing.Size(76, 13);
+            this.L_Output.TabIndex = 2;
+            this.L_Output.Text = "Output: Invalid";
             // 
-            // L_Mode
+            // CB_Prefix
             // 
-            this.L_Mode.AutoSize = true;
-            this.L_Mode.Location = new System.Drawing.Point(116, 45);
-            this.L_Mode.Name = "L_Mode";
-            this.L_Mode.Size = new System.Drawing.Size(37, 13);
-            this.L_Mode.TabIndex = 12;
-            this.L_Mode.Text = "Mode:";
+            this.CB_Prefix.AutoSize = true;
+            this.CB_Prefix.Location = new System.Drawing.Point(96, 68);
+            this.CB_Prefix.Name = "CB_Prefix";
+            this.CB_Prefix.Size = new System.Drawing.Size(55, 17);
+            this.CB_Prefix.TabIndex = 19;
+            this.CB_Prefix.Text = "Prefix:";
+            this.CB_Prefix.UseVisualStyleBackColor = true;
+            this.CB_Prefix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
             // 
-            // L_Format
+            // CB_Suffix
             // 
-            this.L_Format.AutoSize = true;
-            this.L_Format.Location = new System.Drawing.Point(116, 72);
-            this.L_Format.Name = "L_Format";
-            this.L_Format.Size = new System.Drawing.Size(42, 13);
-            this.L_Format.TabIndex = 14;
-            this.L_Format.Text = "Format:";
-            // 
-            // CB_Format
-            // 
-            this.CB_Format.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_Format.FormattingEnabled = true;
-            this.CB_Format.Location = new System.Drawing.Point(168, 69);
-            this.CB_Format.Name = "CB_Format";
-            this.CB_Format.Size = new System.Drawing.Size(144, 21);
-            this.CB_Format.TabIndex = 13;
-            this.CB_Format.SelectedIndexChanged += new System.EventHandler(this.CB_Format_SelectedIndexChanged);
+            this.CB_Suffix.AutoSize = true;
+            this.CB_Suffix.Location = new System.Drawing.Point(96, 89);
+            this.CB_Suffix.Name = "CB_Suffix";
+            this.CB_Suffix.Size = new System.Drawing.Size(55, 17);
+            this.CB_Suffix.TabIndex = 20;
+            this.CB_Suffix.Text = "Suffix:";
+            this.CB_Suffix.UseVisualStyleBackColor = true;
+            this.CB_Suffix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
             // 
             // Main
             // 
@@ -314,6 +343,8 @@ namespace GUIDX.Forms
             this.TLP_Main.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.P_Main.ResumeLayout(false);
+            this.P_Main.PerformLayout();
             this.SS_Main.ResumeLayout(false);
             this.SS_Main.PerformLayout();
             this.TC_Main.ResumeLayout(false);
@@ -322,8 +353,6 @@ namespace GUIDX.Forms
             this.TP_Validator.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.P_Main.ResumeLayout(false);
-            this.P_Main.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +362,7 @@ namespace GUIDX.Forms
 
         private System.Windows.Forms.Button BTN_Generate;
         private System.Windows.Forms.TextBox TB_Output;
-        private System.Windows.Forms.ComboBox CB_Mode;
+        private System.Windows.Forms.ComboBox CB_Format;
         private System.Windows.Forms.Button BTN_Copy;
         private System.Windows.Forms.NumericUpDown NUD_Amount;
         private System.Windows.Forms.TableLayoutPanel TLP_Main;
@@ -349,9 +378,11 @@ namespace GUIDX.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel P_Main;
         private System.Windows.Forms.Label L_Amount;
-        private System.Windows.Forms.Label L_Mode;
         private System.Windows.Forms.Label L_Format;
-        private System.Windows.Forms.ComboBox CB_Format;
+        private System.Windows.Forms.TextBox TB_Suffix;
+        private System.Windows.Forms.TextBox TB_Prefix;
+        private System.Windows.Forms.CheckBox CB_Suffix;
+        private System.Windows.Forms.CheckBox CB_Prefix;
     }
 }
 
