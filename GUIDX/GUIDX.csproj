@@ -59,6 +59,18 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIDGenerationOptions.cs" />
+    <Compile Include="UserControls\GeneratorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\GeneratorControl.Designer.cs">
+      <DependentUpon>GeneratorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ValidatorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ValidatorControl.Designer.cs">
+      <DependentUpon>ValidatorControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\GUIDGenerator.cs" />
     <Compile Include="Utilities\GUIDValidator.cs" />
     <Compile Include="Program.cs" />
@@ -77,6 +89,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\GeneratorControl.resx">
+      <DependentUpon>GeneratorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ValidatorControl.resx">
+      <DependentUpon>ValidatorControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,5 +109,6 @@
     <EmbeddedResource Include="Resources\Icon.ico" />
     <Content Include="Resources\Icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

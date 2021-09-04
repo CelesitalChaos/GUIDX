@@ -14,7 +14,7 @@ namespace GUIDX.Utilities
     public class GUIDGenerator
     {
         /// <summary>
-        /// Generates the type of the unique identifier.
+        ///     Generates the type of the unique identifier.
         /// </summary>
         /// <param name="options">The options.</param>
         /// <returns></returns>
@@ -40,31 +40,35 @@ namespace GUIDX.Utilities
                 case GUIDFormat.Letters:
                 {
                     // 8 - 4 - 4 - 12
-                    generatedText = Randomizer.RandomString(8, options.UpperCase) + "-" + Randomizer.RandomString(4, options.UpperCase) + "-" + Randomizer.RandomString(4, options.UpperCase) + "-" +
-                                    Randomizer.RandomString(4, options.UpperCase) + "-" + Randomizer.RandomString(12, options.UpperCase);
-                        break;
+                    generatedText = Randomizer.RandomString(8, options.UpperCase) + "-" +
+                                    Randomizer.RandomString(4, options.UpperCase) + "-" +
+                                    Randomizer.RandomString(4, options.UpperCase) + "-" +
+                                    Randomizer.RandomString(4, options.UpperCase) + "-" +
+                                    Randomizer.RandomString(12, options.UpperCase);
+                    break;
                 }
 
                 case GUIDFormat.Numeric:
                 {
                     // 8 - 4 - 4 - 12
-                    generatedText = Randomizer.RandomNumberSize(8) + "-" + Randomizer.RandomNumberSize(4) + "-" + Randomizer.RandomNumberSize(4) + "-" +
+                    generatedText = Randomizer.RandomNumberSize(8) + "-" + Randomizer.RandomNumberSize(4) + "-" +
+                                    Randomizer.RandomNumberSize(4) + "-" +
                                     Randomizer.RandomNumberSize(4) + "-" + Randomizer.RandomNumberSize(12);
-                        break;
+                    break;
                 }
             }
 
             generatedText = GeneratePrefixSuffix(generatedText, options);
-            
+
             return generatedText;
         }
 
         /// <summary>
-        /// Generates the prefix suffix.
+        ///     Generates the prefix suffix.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="options">The options.</param>
-        /// <returns>The <see cref="string"/> value.</returns>
+        /// <returns>The <see cref="string" /> value.</returns>
         private static string GeneratePrefixSuffix(string value, GUIDGenerationOptions options)
         {
             string generatePrefixSuffix = value;
@@ -86,11 +90,11 @@ namespace GUIDX.Utilities
         }
 
         /// <summary>
-        /// Generates the specified type.
+        ///     Generates the specified type.
         /// </summary>
         /// <param name="options">The options.</param>
         /// <param name="amount">The amount.</param>
-        /// <returns>The <see cref="string"/> value.</returns>
+        /// <returns>The <see cref="string" /> value.</returns>
         public static string Generate(GUIDGenerationOptions options, int amount = 1)
         {
             string generatedText = string.Empty;
