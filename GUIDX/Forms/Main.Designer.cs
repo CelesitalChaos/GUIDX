@@ -29,6 +29,7 @@ namespace GUIDX.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.BTN_Generate = new System.Windows.Forms.Button();
             this.TB_Output = new System.Windows.Forms.TextBox();
             this.CB_Format = new System.Windows.Forms.ComboBox();
@@ -37,6 +38,8 @@ namespace GUIDX.Forms
             this.TLP_Main = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.P_Main = new System.Windows.Forms.Panel();
+            this.CB_Suffix = new System.Windows.Forms.CheckBox();
+            this.CB_Prefix = new System.Windows.Forms.CheckBox();
             this.TB_Suffix = new System.Windows.Forms.TextBox();
             this.TB_Prefix = new System.Windows.Forms.TextBox();
             this.L_Format = new System.Windows.Forms.Label();
@@ -50,8 +53,6 @@ namespace GUIDX.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.TB_ValidatorInput = new System.Windows.Forms.TextBox();
             this.L_Output = new System.Windows.Forms.Label();
-            this.CB_Prefix = new System.Windows.Forms.CheckBox();
-            this.CB_Suffix = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Amount)).BeginInit();
             this.TLP_Main.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -173,6 +174,28 @@ namespace GUIDX.Forms
             this.P_Main.Name = "P_Main";
             this.P_Main.Size = new System.Drawing.Size(364, 115);
             this.P_Main.TabIndex = 10;
+            // 
+            // CB_Suffix
+            // 
+            this.CB_Suffix.AutoSize = true;
+            this.CB_Suffix.Location = new System.Drawing.Point(96, 89);
+            this.CB_Suffix.Name = "CB_Suffix";
+            this.CB_Suffix.Size = new System.Drawing.Size(55, 17);
+            this.CB_Suffix.TabIndex = 20;
+            this.CB_Suffix.Text = "Suffix:";
+            this.CB_Suffix.UseVisualStyleBackColor = true;
+            this.CB_Suffix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
+            // 
+            // CB_Prefix
+            // 
+            this.CB_Prefix.AutoSize = true;
+            this.CB_Prefix.Location = new System.Drawing.Point(96, 68);
+            this.CB_Prefix.Name = "CB_Prefix";
+            this.CB_Prefix.Size = new System.Drawing.Size(55, 17);
+            this.CB_Prefix.TabIndex = 19;
+            this.CB_Prefix.Text = "Prefix:";
+            this.CB_Prefix.UseVisualStyleBackColor = true;
+            this.CB_Prefix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
             // 
             // TB_Suffix
             // 
@@ -305,28 +328,6 @@ namespace GUIDX.Forms
             this.L_Output.TabIndex = 2;
             this.L_Output.Text = "Output: Invalid";
             // 
-            // CB_Prefix
-            // 
-            this.CB_Prefix.AutoSize = true;
-            this.CB_Prefix.Location = new System.Drawing.Point(96, 68);
-            this.CB_Prefix.Name = "CB_Prefix";
-            this.CB_Prefix.Size = new System.Drawing.Size(55, 17);
-            this.CB_Prefix.TabIndex = 19;
-            this.CB_Prefix.Text = "Prefix:";
-            this.CB_Prefix.UseVisualStyleBackColor = true;
-            this.CB_Prefix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
-            // 
-            // CB_Suffix
-            // 
-            this.CB_Suffix.AutoSize = true;
-            this.CB_Suffix.Location = new System.Drawing.Point(96, 89);
-            this.CB_Suffix.Name = "CB_Suffix";
-            this.CB_Suffix.Size = new System.Drawing.Size(55, 17);
-            this.CB_Suffix.TabIndex = 20;
-            this.CB_Suffix.Text = "Suffix:";
-            this.CB_Suffix.UseVisualStyleBackColor = true;
-            this.CB_Suffix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +336,7 @@ namespace GUIDX.Forms
             this.Controls.Add(this.TC_Main);
             this.Controls.Add(this.SS_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "GUID X";
