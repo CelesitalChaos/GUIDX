@@ -39,6 +39,7 @@ namespace GUIDX.Forms
             options.PrefixText = TB_Prefix.Text;
             options.Suffix = CB_Suffix.Checked;
             options.SuffixText = TB_Suffix.Text;
+            options.UpperCase = CB_Uppercase.Checked;
 
             var result = GUIDGenerator.Generate(options, Convert.ToInt32(NUD_Amount.Value));
 
@@ -109,11 +110,11 @@ namespace GUIDX.Forms
         }
 
         /// <summary>
-        ///     Handles the CheckedChanged event of the CB_Prefix control.
+        ///     Handles the CheckedChanged event of the Checkboxes control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        private void CB_Prefix_CheckedChanged(object sender, EventArgs e)
+        private void CB_Checkboxes_CheckedChanged(object sender, EventArgs e)
         {
             BTN_Generate.PerformClick();
         }

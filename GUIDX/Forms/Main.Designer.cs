@@ -38,6 +38,7 @@ namespace GUIDX.Forms
             this.TLP_Main = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.P_Main = new System.Windows.Forms.Panel();
+            this.CB_Uppercase = new System.Windows.Forms.CheckBox();
             this.CB_Suffix = new System.Windows.Forms.CheckBox();
             this.CB_Prefix = new System.Windows.Forms.CheckBox();
             this.TB_Suffix = new System.Windows.Forms.TextBox();
@@ -163,6 +164,7 @@ namespace GUIDX.Forms
             // 
             // P_Main
             // 
+            this.P_Main.Controls.Add(this.CB_Uppercase);
             this.P_Main.Controls.Add(this.CB_Suffix);
             this.P_Main.Controls.Add(this.CB_Prefix);
             this.P_Main.Controls.Add(this.TB_Suffix);
@@ -179,6 +181,17 @@ namespace GUIDX.Forms
             this.P_Main.Size = new System.Drawing.Size(364, 115);
             this.P_Main.TabIndex = 10;
             // 
+            // CB_Uppercase
+            // 
+            this.CB_Uppercase.AutoSize = true;
+            this.CB_Uppercase.Location = new System.Drawing.Point(12, 68);
+            this.CB_Uppercase.Name = "CB_Uppercase";
+            this.CB_Uppercase.Size = new System.Drawing.Size(78, 17);
+            this.CB_Uppercase.TabIndex = 21;
+            this.CB_Uppercase.Text = "Uppercase";
+            this.CB_Uppercase.UseVisualStyleBackColor = true;
+            this.CB_Uppercase.CheckedChanged += new System.EventHandler(this.CB_Checkboxes_CheckedChanged);
+            // 
             // CB_Suffix
             // 
             this.CB_Suffix.AutoSize = true;
@@ -188,7 +201,7 @@ namespace GUIDX.Forms
             this.CB_Suffix.TabIndex = 20;
             this.CB_Suffix.Text = "Suffix:";
             this.CB_Suffix.UseVisualStyleBackColor = true;
-            this.CB_Suffix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
+            this.CB_Suffix.CheckedChanged += new System.EventHandler(this.CB_Checkboxes_CheckedChanged);
             // 
             // CB_Prefix
             // 
@@ -199,7 +212,7 @@ namespace GUIDX.Forms
             this.CB_Prefix.TabIndex = 19;
             this.CB_Prefix.Text = "Prefix:";
             this.CB_Prefix.UseVisualStyleBackColor = true;
-            this.CB_Prefix.CheckedChanged += new System.EventHandler(this.CB_Prefix_CheckedChanged);
+            this.CB_Prefix.CheckedChanged += new System.EventHandler(this.CB_Checkboxes_CheckedChanged);
             // 
             // TB_Suffix
             // 
@@ -286,7 +299,7 @@ namespace GUIDX.Forms
             this.TP_Validator.Location = new System.Drawing.Point(4, 22);
             this.TP_Validator.Name = "TP_Validator";
             this.TP_Validator.Padding = new System.Windows.Forms.Padding(3);
-            this.TP_Validator.Size = new System.Drawing.Size(376, 343);
+            this.TP_Validator.Size = new System.Drawing.Size(376, 328);
             this.TP_Validator.TabIndex = 1;
             this.TP_Validator.Text = "Validator";
             this.TP_Validator.UseVisualStyleBackColor = true;
@@ -353,7 +366,7 @@ namespace GUIDX.Forms
             // TSMI_Exit
             // 
             this.TSMI_Exit.Name = "TSMI_Exit";
-            this.TSMI_Exit.Size = new System.Drawing.Size(180, 22);
+            this.TSMI_Exit.Size = new System.Drawing.Size(93, 22);
             this.TSMI_Exit.Text = "Exit";
             this.TSMI_Exit.Click += new System.EventHandler(this.TSMI_Exit_Click);
             // 
@@ -421,6 +434,7 @@ namespace GUIDX.Forms
         private System.Windows.Forms.MenuStrip MS_Menu;
         private System.Windows.Forms.ToolStripMenuItem TSMI_File;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Exit;
+        private System.Windows.Forms.CheckBox CB_Uppercase;
     }
 }
 

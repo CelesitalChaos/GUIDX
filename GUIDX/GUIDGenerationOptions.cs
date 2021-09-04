@@ -14,5 +14,6 @@ namespace GUIDX
         public string SuffixText = string.Empty;
         public bool Prefix = false;
         public bool Suffix = false;
+        public bool UpperCase = false;
     }
 }

@@ -61,9 +61,9 @@ namespace GUIDX
         ///     Generates a random string with a given size.
         /// </summary>
         /// <param name="size">The size.</param>
-        /// <param name="upperCase">if set to <c>true</c> [upper case].</param>
+        /// <param name="lowerCase">if set to <c>true</c> [upper case].</param>
         /// <returns></returns>
-        public static string RandomString(int size, bool upperCase = false)
+        public static string RandomString(int size, bool lowerCase = false)
         {
             var builder = new StringBuilder(size);
 
@@ -73,7 +73,16 @@ namespace GUIDX
             // the second group containing the lowercase.  
 
             // char is a single Unicode character  
-            char offset = upperCase ? 'a' : 'A';
+            char offset;
+            if (lowerCase)
+            {
+                offset = 'A';
+            }
+            else
+            {
+                offset = 'a';
+            }
+
             const int lettersOffset = 26; // A...Z or a..z: length=26  
 
             for (var i = 0; i < size; i++)
@@ -82,7 +91,7 @@ namespace GUIDX
                 builder.Append(@char);
             }
 
-            if (upperCase)
+            if (lowerCase)
             {
                 return builder.ToString().ToUpper();
             }

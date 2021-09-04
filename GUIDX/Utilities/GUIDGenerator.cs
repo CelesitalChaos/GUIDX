@@ -28,14 +28,20 @@ namespace GUIDX.Utilities
                 {
                     Guid generatedGuid = Guid.NewGuid();
                     generatedText = generatedGuid.ToString();
+
+                    if (options.UpperCase)
+                    {
+                        generatedText = generatedText.ToUpper();
+                    }
+
                     break;
                 }
 
                 case GUIDFormat.Letters:
                 {
                     // 8 - 4 - 4 - 12
-                    generatedText = Randomizer.RandomString(8) + "-" + Randomizer.RandomString(4) + "-" + Randomizer.RandomString(4) + "-" +
-                                    Randomizer.RandomString(4) + "-" + Randomizer.RandomString(12);
+                    generatedText = Randomizer.RandomString(8, options.UpperCase) + "-" + Randomizer.RandomString(4, options.UpperCase) + "-" + Randomizer.RandomString(4, options.UpperCase) + "-" +
+                                    Randomizer.RandomString(4, options.UpperCase) + "-" + Randomizer.RandomString(12, options.UpperCase);
                         break;
                 }
 
